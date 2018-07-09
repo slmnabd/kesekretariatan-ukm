@@ -1,0 +1,35 @@
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for(@letter) do |f| %>
+
+    <% if @letter.errors.any? %>
+      <% @letter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :activity_id %>
+      <%= f.collection_select :activity_id, Activity.order(:id), :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :type_of_letter_id %>
+      <%= f.collection_select :type_of_letter_id, TypeOfLetter.order(:id), :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+    </div>    
+
+    <div class="form-group">
+      <%= f.submit "Submit", class: 'btn btn-primary form-control' %>
+    </div>
+    
+  <% end %>
+</div>

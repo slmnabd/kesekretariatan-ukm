@@ -1,0 +1,69 @@
+<%= render "navbar" %>
+<div class="" style="width:80%;margin: 0 auto;">
+  
+  <h2>Nama Kegitatan      : <%= @activity.name %></h2>
+  <h4>Tanggal Pelaksanaan : <%= @activity.date %></h4>
+  <h4>Deskripsi Kegiatan  : <%= @activity.description %></h4>
+  <br>
+  <br>
+  <br> 
+  <h3>Hasil Rapat</h3>
+  <% if @activity.meeting_results.any? %>
+  <table class="table table-bordered table-hover" style="">
+    <thead>
+      <tr class="text-center">
+        <td>No</td>
+        <td>Jenis rapat</td>
+        <td>Kegiatan</td>
+        <td>tanggal</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% no = 0 %>
+      <% @activity.meeting_results.each do |s| %>
+      <tr>
+        <td class="text-center"><%= no += 1 %></td>
+        <td><%= s.type_of_meeting.name %></td>
+        <td><%= s.activity.name %></td>
+        <td><%= s.date %></td>
+        <td class="text-center"><%= link_to 'show', meeting_result_path(s) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <%= "data tidak ditemukan :)" %>
+  <% end %>
+
+  <h3>Proposal/surat/LPJ</h3>
+  <% if @activity.letters.any? %>
+    <table class="table table-bordered table-hover" style="">
+      <thead>
+        <tr class="text-center">
+          <td>No</td>
+          <td>Kegiatan</td>
+          <td>Tipe</td>
+          <td>Download link</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% no = 0 %>
+        <% @activity.letters.each do |s| %>
+        <tr>
+          <td class="text-center"><%= no += 1 %></td>
+          <td><%= s.activity.name %></td>
+          <td><%= s.type_of_letter.name %></td>
+          <td><%= link_to "download", s.file_url %></td>
+          <td class="text-center"><%= link_to 'show', letter_path(s) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <%= "data tidak diactivity.temukan :)" %>s
+  <% end %>
+</div>

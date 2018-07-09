@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity_id: 1
+  type_of_letter_id: 1
+  description: MyString
+  file: MyString
+
+two:
+  activity_id: 1
+  type_of_letter_id: 1
+  description: MyString
+  file: MyString

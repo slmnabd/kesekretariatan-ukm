@@ -1,0 +1,43 @@
+<%= render "navbar" %>
+<div class="" style="width:80%;margin: 0 auto;">
+  
+  <h2>Kegiatan</h2>
+
+  <% if admin_signed_in? %>
+  <%= link_to 'tambah kegiatan', new_activity_path, class: 'btn btn-primary' %>
+  <br><br>
+  <% end %>
+  
+
+  <% if @activity.any? %>
+  <table class="table table-bordered table-hover" style="">
+    <thead>
+      <tr class="text-center">
+        <td>No</td>
+        <td>Nama</td>
+        <td>Tanggal pelaksanaan</td>
+        <% if admin_signed_in? %>
+        <td>Action</td>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% no = 0 %>
+      <% @activity.each do |s| %>
+      <tr>
+        <td class="text-center"><%= no += 1 %></td>
+        <td><%=link_to s.name, activity_path(s) %></td>
+        <td><%= I18n.l(s.date.to_date) %></td>
+        <% if admin_signed_in? %>
+        <td class="text-center"><%= link_to 'edit', edit_activity_path(s) %> | <%= link_to 'delete', activity_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <br><br>
+  <%= "data kosong, silahkan input data terlebih dahulu" %>
+  <% end %>
+</div>

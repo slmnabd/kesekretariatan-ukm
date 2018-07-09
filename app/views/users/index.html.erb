@@ -1,0 +1,41 @@
+<div class="" style="width:80%;margin: 0 auto;">
+  <h2>Daftar Pengurus</h2>
+
+  <div data-turbolinks="false">
+  <%= link_to 'tambah pengurus', new_user_path, class: 'btn btn-primary' %>
+  <br><br>
+  </div>
+  
+
+  <% if @user.any? %>
+  <table class="table table-bordered table-hover" style="">
+    <thead>
+      <tr class="text-center">
+        <td>No</td>
+        <td>NIM</td>
+        <td>Nama</td>
+        <td>No.WA</td>
+        <td>Email</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% no = 0 %>
+      <% @user.each do |s| %>
+      <tr>
+        <td class="text-center"><%= no += 1 %></td>
+        <td><%= s.nim %></td>
+        <td><%= s.name %></td>
+        <td><%= s.phone %></td>
+        <td><%= s.email %></td>
+        <td class="text-center"><%= link_to 'edit', edit_user_path(s) %> | <%= link_to 'delete', user_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <br><br>
+  <%= "data kosong, silahkan input data terlebih dahulu" %>
+  <% end %>
+</div>

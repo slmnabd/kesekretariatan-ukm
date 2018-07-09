@@ -1,0 +1,39 @@
+<div class="" style="width:80%;margin: 0 auto;">
+  <h2>Hasil Rapat</h2>
+
+  <div data-turbolinks="false">
+  <%= link_to 'tambah dosen', new_meeting_result_path, class: 'btn btn-primary' %>
+  <br><br>
+  </div>
+  
+
+  <% if @meeting_result.any? %>
+  <table class="table table-bordered table-hover" style="">
+    <thead>
+      <tr class="text-center">
+        <td>No</td>
+        <td>Jenis rapat</td>
+        <td>Kegiatan</td>
+        <td>tanggal</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% no = 0 %>
+      <% @meeting_result.each do |s| %>
+      <tr>
+        <td class="text-center"><%= no += 1 %></td>
+        <td><%= s.type_of_meeting.name %></td>
+        <td><%= s.activity.name %></td>
+        <td><%= s.date %></td>
+        <td class="text-center"><%= link_to 'show', meeting_result_path(s) %> | <%= link_to 'edit', edit_meeting_result_path(s) %> | <%= link_to 'delete', meeting_result_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <br><br>
+  <%= "data kosong, silahkan input data terlebih dahulu" %>
+  <% end %>
+</div>

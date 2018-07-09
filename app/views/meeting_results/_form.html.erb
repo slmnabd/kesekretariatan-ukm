@@ -1,0 +1,37 @@
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for(@meeting_result) do |f| %>
+
+    <% if @meeting_result.errors.any? %>
+      <% @meeting_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+
+
+    <div class="form-group">
+      <%= f.label :type_of_meeting_id %>
+      <%= f.collection_select :type_of_meeting_id, TypeOfMeeting.order(:id), :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :activity_id %>
+      <%= f.collection_select :activity_id, Activity.order(:id), :id, :name, {include_blank: true}, {class: 'form-control'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.date_field :date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :result %>
+      <%= f.text_area :result, rows: 10, class: 'form-control' %>
+    </div>
+    
+
+    <div class="form-group">
+      <%= f.submit "Submit", class: 'btn btn-primary form-control' %>
+    </div>
+    
+  <% end %>
+</div>
