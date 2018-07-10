@@ -5,4 +5,5 @@ class Letter < ApplicationRecord
 
   mount_uploader :file, FileUploader
 
+
 end

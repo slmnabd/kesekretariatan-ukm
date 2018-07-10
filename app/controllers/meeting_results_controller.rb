@@ -1,5 +1,5 @@
 class MeetingResultsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:index, :new]
   def index
     @meeting_result = MeetingResult.all
   end

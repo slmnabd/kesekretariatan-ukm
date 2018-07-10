@@ -27,6 +27,11 @@
       <%= f.text_field :email, class: 'form-control' %>
     </div>
 
+    <div class="form-group">
+      <%= f.label :position %>
+      <%= f.select(:position, options_for_select([["Ketua", "Ketua"], ["Wakil Ketua", "Wakil Ketua"], ["Sekretaris", "Sekretaris"], ["Bendahara", "Bendahara"], ["Kepala Bidang", "Kepala Bidang"], ["Anggota", "Anggota"]]), {}, {class: 'form-control'}) %>
+    </div>
+
         
 
     <div class="form-group">

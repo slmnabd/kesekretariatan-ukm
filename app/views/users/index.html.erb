@@ -16,6 +16,7 @@
         <td>Nama</td>
         <td>No.WA</td>
         <td>Email</td>
+        <td>Jabatan</td>
         <td>Action</td>
       </tr>
     </thead>
@@ -29,6 +30,7 @@
         <td><%= s.name %></td>
         <td><%= s.phone %></td>
         <td><%= s.email %></td>
+        <td><%= s.position %></td>
         <td class="text-center"><%= link_to 'edit', edit_user_path(s) %> | <%= link_to 'delete', user_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
       </tr>
       <% end %>

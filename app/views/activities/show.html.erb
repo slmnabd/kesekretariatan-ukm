@@ -43,9 +43,9 @@
         <tr class="text-center">
           <td>No</td>
           <td>Kegiatan</td>
-          <td>Tipe</td>
-          <td>Download link</td>
-          <td>Aksi</td>
+          <td>Jenis file</td>
+          <td>Deskripsi</td>
+          <td>Unduh</td>
         </tr>
       </thead>
 
@@ -56,13 +56,14 @@
           <td class="text-center"><%= no += 1 %></td>
           <td><%= s.activity.name %></td>
           <td><%= s.type_of_letter.name %></td>
-          <td><%= link_to "download", s.file_url %></td>
-          <td class="text-center"><%= link_to 'show', letter_path(s) %></td>
+          <td><%= s.description %></td>
+          <td class="text-center"><%= link_to "unduh", s.file_url %></td>
+          
         </tr>
         <% end %>
       </tbody>
     </table>
   <% else %>
-    <%= "data tidak ditemukan :)" %>
+    <%= "Tidak ada data yang di upload :(" %>
   <% end %>
 </div>

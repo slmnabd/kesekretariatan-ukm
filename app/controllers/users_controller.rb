@@ -39,6 +39,6 @@ class UsersController < ApplicationController
 
 private
   def resume_params
-    params.require(:user).permit(:name, :nim, :phone, :email)
+    params.require(:user).permit(:name, :nim, :phone, :email, :position)
   end
 end

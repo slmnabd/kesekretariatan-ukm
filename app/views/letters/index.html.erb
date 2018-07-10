@@ -15,6 +15,7 @@
         <td>Kegiatan</td>
         <td>Jenis</td>
         <td>Unduh</td>
+        <td>Deskripsi</td>
         <td>Aksi</td>
       </tr>
     </thead>
@@ -27,7 +28,8 @@
         <td><%= s.activity.name %></td>
         <td><%= s.type_of_letter.name %></td>
         <td><%= link_to "unduh", s.file_url %></td>
-        <td class="text-center"><%= link_to 'show', letter_path(s) %> | <%= link_to 'edit', edit_letter_path(s) %> | <%= link_to 'delete', letter_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
+        <td><%= s.description %></td>
+        <td class="text-center"><%= link_to 'edit', edit_letter_path(s) %> | <%= link_to 'delete', letter_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
       </tr>
       <% end %>
     </tbody>
