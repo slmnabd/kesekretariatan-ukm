@@ -1,5 +1,5 @@
 class TypeOfMeetingsController < ApplicationController
-
+  before_action :authenticate_admin!
   def index
     @type_of_meeting = TypeOfMeeting.all
   end

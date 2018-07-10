@@ -1,8 +1,8 @@
 <div class="" style="width:80%;margin: 0 auto;">
-  <h2>Kegiatan</h2>
+  <h2>Surat / Proposal / LPJ</h2>
 
   <div data-turbolinks="false">
-  <%= link_to 'tambah kegiatan', new_letter_path, class: 'btn btn-primary' %>
+  <%= link_to 'tambah file', new_letter_path, class: 'btn btn-primary' %>
   <br><br>
   </div>
   
@@ -13,9 +13,9 @@
       <tr class="text-center">
         <td>No</td>
         <td>Kegiatan</td>
-        <td>Tipe</td>
-        <td>Download link</td>
-        <td>Action</td>
+        <td>Jenis</td>
+        <td>Unduh</td>
+        <td>Aksi</td>
       </tr>
     </thead>
 
@@ -26,7 +26,7 @@
         <td class="text-center"><%= no += 1 %></td>
         <td><%= s.activity.name %></td>
         <td><%= s.type_of_letter.name %></td>
-        <td><%= link_to "download", s.file_url %></td>
+        <td><%= link_to "unduh", s.file_url %></td>
         <td class="text-center"><%= link_to 'show', letter_path(s) %> | <%= link_to 'edit', edit_letter_path(s) %> | <%= link_to 'delete', letter_path(s), method: :delete, data: {confirm: "are you sure ?"} %></td>
       </tr>
       <% end %>

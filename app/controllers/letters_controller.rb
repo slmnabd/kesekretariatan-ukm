@@ -1,4 +1,5 @@
 class LettersController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @letter = Letter.all
   end

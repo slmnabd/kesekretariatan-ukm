@@ -1,0 +1,7 @@
+<div style="width:80%;margin:0 auto;">
+  <h1><%= @meeting_result.activity.name %></h1>
+  <h2><%= @meeting_result.type_of_meeting.name %></h2>
+  <h4><%= I18n.l(@meeting_result.date.to_date) %></h4>
+  <h4>Hasil rapat</h4>
+  <p style="text-align:justify;"><%= @meeting_result.result %></p>
+</div>

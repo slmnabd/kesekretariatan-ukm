@@ -1,8 +1,7 @@
-<%= render "navbar" %>
 <div class="" style="width:80%;margin: 0 auto;">
   
-  <h2>Nama Kegitatan      : <%= @activity.name %></h2>
-  <h4>Tanggal Pelaksanaan : <%= @activity.date %></h4>
+  <h2>Nama Kegitatan : <%= @activity.name %></h2>
+  <h4>Tanggal Pelaksanaan : <%= I18n.l(@activity.date.to_date) %></h4>
   <h4>Deskripsi Kegiatan  : <%= @activity.description %></h4>
   <br>
   <br>
@@ -16,7 +15,7 @@
         <td>Jenis rapat</td>
         <td>Kegiatan</td>
         <td>tanggal</td>
-        <td>Action</td>
+        <td>Aksi</td>
       </tr>
     </thead>
 
@@ -27,7 +26,7 @@
         <td class="text-center"><%= no += 1 %></td>
         <td><%= s.type_of_meeting.name %></td>
         <td><%= s.activity.name %></td>
-        <td><%= s.date %></td>
+        <td><%= I18n.l(s.date.to_date) %></td>
         <td class="text-center"><%= link_to 'show', meeting_result_path(s) %></td>
       </tr>
       <% end %>
@@ -46,7 +45,7 @@
           <td>Kegiatan</td>
           <td>Tipe</td>
           <td>Download link</td>
-          <td>Action</td>
+          <td>Aksi</td>
         </tr>
       </thead>
 
@@ -64,6 +63,6 @@
       </tbody>
     </table>
   <% else %>
-    <%= "data tidak diactivity.temukan :)" %>s
+    <%= "data tidak ditemukan :)" %>
   <% end %>
 </div>

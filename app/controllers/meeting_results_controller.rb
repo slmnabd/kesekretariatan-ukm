@@ -1,7 +1,7 @@
 class MeetingResultsController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @meeting_result = MeetingResult.all
-    
   end
 
   def new

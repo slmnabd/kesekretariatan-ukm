@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_admin!, only: [:new, :create]
   def index
     if params[:search]
       @activity = Activity.where('name like ?', "%#{params[:search]}%")

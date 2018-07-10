@@ -1,5 +1,5 @@
 class TypeOfLettersController < ApplicationController
-
+  before_action :authenticate_admin!
   def index
     @type_of_letter = TypeOfLetter.all
   end
