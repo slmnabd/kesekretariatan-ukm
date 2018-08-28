@@ -7,6 +7,7 @@ karena UI bukan jadi pokok penilaian, jadi masih seadanya standar bootstrap hehe
 yang mau liat demo-nya bisa ke https://kesekretariatan-ukm.herokuapp.com/
 
 *tanpa login hanya bisa melihat saja*
+
 cara menggunakannya :
 1. klik login
 2. sign up
