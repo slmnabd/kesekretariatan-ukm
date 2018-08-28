@@ -1,24 +1,5 @@
-# README
+# KESEKRETARIATAN UKM
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+project akhir PBO yang dikerjakan pake ruby on rails :v
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+karena UI bukan jadi pokok penilaian, jadi masih seadanya standar bootstrap hehe
