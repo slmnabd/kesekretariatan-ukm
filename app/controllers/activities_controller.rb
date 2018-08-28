@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create]
   def index
     if params[:search]
-      @activity = Activity.where('name like ?', "%#{params[:search]}%")
+      @activity = Activity.where('name ilike ?', "%#{params[:search]}%")
     else
       @activity = Activity.order(id: :asc)
     end
